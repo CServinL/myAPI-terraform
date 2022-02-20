@@ -10,7 +10,7 @@ resource "docker_container" "mysql" {
   ]
   ports {
     internal = 3306
-    external = 3307 # Usar un puerto no estandard
+    external = 3306
   }
   depends_on = [
     docker_image.mysql
