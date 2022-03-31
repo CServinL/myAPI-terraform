@@ -11,7 +11,7 @@ RUN apt-get update -qq && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" && \
     apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
     apt-get update -qq && \
-    apt-get install -qqy docker-ce terraform && \
+    apt-get install -qqy docker-ce terraform python && \
     usermod -aG docker jenkins && \
     chown -R jenkins:jenkins $JENKINS_HOME/ && \
     touch /var/run/docker.sock && \
