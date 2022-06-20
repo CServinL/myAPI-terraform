@@ -31,9 +31,9 @@ resource "docker_container" "prometheus" {
     container_path = "/prometheus-data"
     read_only = false
   }
-  provisioner "local-exec" {
-    command = "docker exec -d -u root jenkins chown jenkins:jenkins /var/run/docker.sock"
-  }
+  # provisioner "local-exec" {
+  #   command = "docker exec -d -u root jenkins chown jenkins:jenkins /var/run/docker.sock"
+  # }
 }
 
-output "prometheus_ip" { value = "PROMETHEUS_IP=${docker_container.prometheus.ip_address}" }
+output "priometheus_ip" { value = "PROMETHEUS_IP=${docker_container.prometheus.ip_address}" }
